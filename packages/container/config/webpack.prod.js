@@ -11,7 +11,7 @@ const prodConfig = {
     output: {
         path: path.resolve(__dirname, '../dist'), // Dossier de sortie
         filename: '[name].[contenthash].js', // Nom des fichiers JS générés
-        publicPath: 'https://mbayeScientist.github.io/microfrontend_Saas/', // Chemin public GitHub Pages
+        publicPath: 'https://mbayeScientist.github.io/microfrontend_Saas/container/', // Chemin public GitHub Pages
         clean: true, // Nettoie le dossier dist avant chaque build
     },
 plugins:[
@@ -19,7 +19,6 @@ plugins:[
         name : 'container',
         remotes:{
             marketing: `marketing@https://mbayescientist.github.io/microfrontend_Saas/marketing/remoteEntry.js`
-            
         },
         shared : packageJson.dependencies
     })
