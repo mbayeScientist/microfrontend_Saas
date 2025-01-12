@@ -11,7 +11,7 @@ const prodConfig = {
     output: {
         path: path.resolve(__dirname, 'dist'), // Dossier de sortie
         filename: '[name].[contenthash].js', // Nom des fichiers JS générés
-        publicPath: '/<repository-name>/', // Chemin public GitHub Pages
+        publicPath: 'https://mbayeScientist.github.io/microfrontend_Saas/', // Chemin public GitHub Pages
         clean: true, // Nettoie le dossier dist avant chaque build
     },
 plugins:[
