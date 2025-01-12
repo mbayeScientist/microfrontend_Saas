@@ -25,10 +25,8 @@ jobs:
       # Étape 3 : Construisez le projet
       - run: npm run build
 
-      # Étape 4 : Synchronisez avec AWS S3
-      - name: Synchronize to S3
-        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
+      # Étape 4 : Déployer sur GitHub Pages
+      - name: Déployer sur GitHub Pages
+        run: npm run deploy
         env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: us-east-1
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

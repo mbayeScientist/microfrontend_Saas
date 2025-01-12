@@ -9,7 +9,7 @@ const prodConfig = {
     mode : 'production',
     entry: './src/index.js', // Point d'entrée principal
     output: {
-        path: path.resolve(__dirname, 'dist'), // Dossier de sortie
+        path: path.resolve(__dirname, '../dist'), // Dossier de sortie
         filename: '[name].[contenthash].js', // Nom des fichiers JS générés
         publicPath: 'https://mbayeScientist.github.io/microfrontend_Saas/', // Chemin public GitHub Pages
         clean: true, // Nettoie le dossier dist avant chaque build
@@ -18,7 +18,8 @@ plugins:[
     new ModuleFederationPlugin({
         name : 'container',
         remotes:{
-            marketing: `marketing@${domain}/marketing/remoteEntry.js`
+            marketing: `marketing@https://mbayescientist.github.io/microfrontend_Saas/marketing/remoteEntry.js`
+            
         },
         shared : packageJson.dependencies
     })
