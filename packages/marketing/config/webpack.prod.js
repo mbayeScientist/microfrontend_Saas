@@ -6,7 +6,8 @@ const packageJson = require('../package.json');
 const prodConfig={
     mode :'production',
     output:{
-        filename: '[name].[contenthash].js'
+        filename: '[name].[contenthash].js',
+        publicPath: 'https://mbayeScientist.github.io/microfrontend_Saas/marketing/',
     },
     plugins:[
         new ModuleFederationPlugin({
